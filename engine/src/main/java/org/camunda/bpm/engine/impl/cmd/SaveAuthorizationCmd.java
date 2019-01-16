@@ -45,7 +45,9 @@ public class SaveAuthorizationCmd implements Command<Authorization> {
   public Authorization execute(CommandContext commandContext) {
     
     final AuthorizationManager authorizationManager = commandContext.getAuthorizationManager();
-    
+
+    authorizationManager.validateResourceCompatibility(authorization);
+
     if(authorization.getId() == null) {
       authorizationManager.insert(authorization);
       

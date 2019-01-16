@@ -59,4 +59,8 @@ public enum Resources implements Resource {
     return id;
   }
 
+  public int getId() {
+    return id;
+  }
+
 }

@@ -122,6 +122,7 @@ public abstract class AbstractQuery<T extends Query<?,?>, U> extends ListQueryPa
     for (QueryOrderingProperty orderingProperty : orderingProperties) {
       ensureNotNull(NotValidException.class, "Invalid query: call asc() or desc() after using orderByXX()", "direction", orderingProperty.getDirection());
     }
+
   }
 
   @SuppressWarnings("unchecked")

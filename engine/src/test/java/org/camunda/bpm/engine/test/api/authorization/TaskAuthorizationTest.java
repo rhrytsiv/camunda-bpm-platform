@@ -10105,7 +10105,7 @@ public class TaskAuthorizationTest extends AuthorizationTest {
 
       // then
       Authorization auth = authorizationService.createAuthorizationQuery().userIdIn("Horst").singleResult();
-      assertTrue(auth.isPermissionGranted(Permissions.DELETE_HISTORY));
+      assertTrue(auth.isPermissionGranted(Permissions.DELETE));
 
       taskService.deleteTask(newTask.getId(), true);
 

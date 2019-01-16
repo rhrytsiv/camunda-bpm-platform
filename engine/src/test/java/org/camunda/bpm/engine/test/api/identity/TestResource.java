@@ -21,12 +21,14 @@ import org.camunda.bpm.engine.authorization.Resource;
  * @author Daniel Meyer
  *
  */
-public class TestResource implements Resource {
+public enum TestResource implements Resource {
+  RESOURCE1("resource1", 100),
+  RESOURCE2("resource2", 101);
   
   protected int id;
   protected String name;
 
-  public TestResource(String name, int id) {
+  TestResource(String name, int id) {
     this.name = name;
     this.id = id;
   }

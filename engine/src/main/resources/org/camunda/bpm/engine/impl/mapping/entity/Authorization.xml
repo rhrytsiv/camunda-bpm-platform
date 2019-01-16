@@ -196,6 +196,17 @@
         and ${bitand1}RES.PERMS_${bitand2}#{permission}${bitand3} = #{permission}  
       </if>
 
+      <if test="resourceTypes != null &amp;&amp; resourceTypes.size > 0">
+        and RES.RESOURCE_TYPE_ in
+        <foreach item="key"
+                collection="resourceTypes"
+                open="("
+                separator=","
+                close=")">
+          #{key.id}
+        </foreach>
+      </if>
+
       <include refid="org.camunda.bpm.engine.impl.persistence.entity.AuthorizationEntity.queryAuthorizationCheck" />
 
     </where>
